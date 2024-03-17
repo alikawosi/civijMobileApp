@@ -175,7 +175,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'brand.ai',
+                                      'Civij.com',
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium,
                                     ),
