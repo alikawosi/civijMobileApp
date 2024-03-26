@@ -175,9 +175,15 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Civij.com',
+                                      'Civij',
                                       style: FlutterFlowTheme.of(context)
-                                          .headlineMedium,
+                                          .headlineLarge
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            fontSize: 72.0,
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -205,7 +211,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                   child: TabBar(
                                     isScrollable: true,
                                     labelColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                        FlutterFlowTheme.of(context).tertiary,
                                     unselectedLabelColor:
                                         FlutterFlowTheme.of(context)
                                             .secondaryText,
@@ -496,7 +502,7 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                         return;
                                                       }
 
-                                                      context.goNamedAuth(
+                                                      context.pushNamedAuth(
                                                           'Dashboard',
                                                           context.mounted);
                                                     },
@@ -1279,12 +1285,12 @@ class _AuthLoginWidgetState extends State<AuthLoginWidget>
                                                             .emailAddressCreateController
                                                             .text,
                                                         'password': _model
-                                                            .passwordConfirmController
+                                                            .passwordCreateController
                                                             .text,
-                                                        'id': '',
+                                                        'id': currentUserUid,
                                                       });
 
-                                                      context.goNamedAuth(
+                                                      context.pushNamedAuth(
                                                           'Dashboard',
                                                           context.mounted);
                                                     },
